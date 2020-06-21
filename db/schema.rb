@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_140218) do
 
   create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.decimal "point", precision: 3, scale: 2, null: false
+    t.decimal "point", precision: 3, scale: 1, null: false
     t.bigint "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

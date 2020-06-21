@@ -1,0 +1,15 @@
+<%= link_to 'アーティストを選択する', root_path %>
+<%= link_to '曲と点数を登録する', new_artist_song_path %>
+<h3>
+    <%=  @artist.group %>
+</h3>
+<% @songs.each do |song| %>
+    <ul>
+        <li><%= "【 #{song.title} 】 ・・・ #{song.point} 点" %></li>
+        <%= link_to path %>
+        <button class="btn btn-outline-primary p-2">▶ ▶</button>
+    </ul>
+<% end %>
+
+
+

@@ -1,0 +1,7 @@
+<%= form_with(model: @artist, local: true) do |form| %>
+  <h3>
+    投稿する
+  </h3>
+  <%= form.text_field :group, placeholder: "アーティストを入力してください" %>
+  <%= form.submit "SEND" %>
+<% end %>

@@ -1,0 +1,6 @@
+<%= link_to 'アーティストを登録する', new_artist_path %>
+<% @artists.each do |artist| %>
+    <ul>
+        <li><%=link_to artist.group, artist_songs_path(artist) %></li>
+    </ul>
+<% end %>

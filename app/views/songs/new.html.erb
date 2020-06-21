@@ -1,0 +1,8 @@
+<%= form_with(model: @song, url: artist_songs_path, local: true) do |form| %>
+  <h3>
+    投稿する
+  </h3>
+  <%= form.text_field :title, placeholder: "曲名を入力してください" %>
+  <%= form.number_field :point, step: "0.1", placeholder: "点数を入力してください" %>
+  <%= form.submit "SEND" %>
+<% end %>
