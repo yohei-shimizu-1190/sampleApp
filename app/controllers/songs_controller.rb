@@ -5,7 +5,6 @@ class SongsController < ApplicationController
   end
 
   def new
-
     @song = Song.new
   end
 
@@ -16,6 +15,29 @@ class SongsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.find(params[:id])
+    if @song.update(song_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
+  end
+
+
+  def destroy
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.find(params[:id])
+    @song.destroy
+    redirect_to action: :index
   end
 
   private

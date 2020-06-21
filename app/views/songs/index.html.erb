@@ -6,8 +6,12 @@
 <% @songs.each do |song| %>
     <ul>
         <li><%= "【 #{song.title} 】 ・・・ #{song.point} 点" %></li>
-        <%= link_to path %>
-        <button class="btn btn-outline-primary p-2">▶ ▶</button>
+        <%= link_to edit_artist_song_path(@artist, song)do %>
+            <button class="btn btn-outline-primary p-2 btn-sm"> 編集</button>
+        <% end %>
+        <%= link_to artist_song_path(@artist, song), method: :delete do %>
+            <button class="btn btn-outline-warning p-2 btn-sm"> 削除</button>
+        <% end %>
     </ul>
 <% end %>
 
